@@ -1,0 +1,42 @@
+#header-add {
+  height: 350px;
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.articles {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.article-display {
+  float: left;
+  margin: 10px 10px 20px 10px;
+  width: 276px;
+  text-align: center;
+}
+
+.article-display h6 {
+text-align: left;
+color: gray;
+}
+
+.article-display:hover {
+  cursor: pointer;
+}
+
+.article-display img {
+  height: 200px;
+  width: 275px;
+}
+
+@media screen and (max-width: 600px) {
+  #header-add{
+    display: none;
+  }
+  .articles {
+    width: 300px;
+  }
+}
