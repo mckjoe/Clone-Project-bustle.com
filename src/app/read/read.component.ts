@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import {  Article } from '../article.model';
+import { Article } from '../article.model';
 
 @Component({
   selector: 'app-read',
@@ -10,9 +10,14 @@ import {  Article } from '../article.model';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  articleId: number = null;
+
+  constructor(private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.articleId = parseInt(urlParameters['id']);
+    });
   }
 
 }
