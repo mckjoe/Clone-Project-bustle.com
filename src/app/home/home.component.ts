@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from '../article.model';
 import { ArticleService } from '../article.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { ArticleService } from '../article.service';
 })
 export class HomeComponent implements OnInit {
 
-  articles: Article[];
+  articles: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private articleService: ArticleService) { }
 

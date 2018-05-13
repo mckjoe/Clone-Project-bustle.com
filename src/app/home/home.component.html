@@ -1,6 +1,6 @@
 <img id= "header-add" src='./assets/benadryl.jpg'>
 <div class="articles">
-  <div *ngFor="let article of articles" (click)="goToReadPage(article)" class="article-display">
+  <div *ngFor="let article of articles | async" (click)="goToReadPage(article)" class="article-display">
     <img src="{{article.img}}">
     <h4><strong>{{article.title}}</strong></h4>
     <p>{{article.teaser}}</p>
