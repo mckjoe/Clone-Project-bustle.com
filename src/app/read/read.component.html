@@ -1,6 +1,6 @@
 <div class="well">
-  <img src="{{articleToDisplay.img}}">
-  <h3>{{articleToDisplay.title}}</h3>
-  <h5>{{articleToDisplay.author}}</h5>
+  <img src="{{(articleToDisplay | async)?.img}}">
+  <h3>{{(articleToDisplay | async)?.title}}</h3>
+  <h5>{{(articleToDisplay | async)?.author}}</h5>
 </div>
-<p>{{articleToDisplay.body}}</p>
+<p>{{(articleToDisplay | async)?.body}}</p>

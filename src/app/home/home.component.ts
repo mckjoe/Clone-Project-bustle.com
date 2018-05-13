@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private articleService: ArticleService) { }
 
-  goToReadPage(clickedArticle: Article) {
-    this.router.navigate(['articles', clickedArticle.id]);
+  goToReadPage(clickedArticle) {
+    this.router.navigate(['articles', clickedArticle.$key]);
   }
 
   ngOnInit() {

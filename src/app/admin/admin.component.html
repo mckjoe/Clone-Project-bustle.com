@@ -1,3 +1,39 @@
-<p>
-  admin works!
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Article to List</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Article Title:</label>
+        <br>
+        <input #newTitle>
+      </div>
+
+      <div>
+        <label>Article Teaser:</label>
+        <br>
+        <input #newTeaser>
+      </div>
+
+      <div>
+        <label>Article Author:</label>
+        <br>
+        <input #newAuthor>
+      </div>
+
+      <div>
+        <label>Article Content:</label>
+        <br>
+        <textarea #newBody></textarea>
+      </div>
+
+      <div>
+        <label>Article Image URL:</label>
+        <br>
+        <input #newImg>
+      </div>
+      <button (click)="submitForm(newTitle.value, newTeaser.value, newAuthor.value, newBody.value, newImg.value); newTitle.value=''; newTeaser.value=''; newAuthor.value=''; newBody.value=''; newImg.value=''">Add</button>
+    </div>
+  </div>
+</div>

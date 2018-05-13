@@ -12,14 +12,14 @@ import { ArticleService } from '../article.service';
 })
 export class ReadComponent implements OnInit {
 
-  articleId: number;
-  articleToDisplay: Article;
+  articleId: string;
+  articleToDisplay;
 
   constructor(private route: ActivatedRoute, private location: Location, private articleService: ArticleService) {}
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.articleId = parseInt(urlParameters['id']);
+      this.articleId = urlParameters['id'];
     });
     this.articleToDisplay = this.articleService.getArticleById(this.articleId);
   }
