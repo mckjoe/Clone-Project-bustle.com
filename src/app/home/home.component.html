@@ -1,16 +1,24 @@
-<img id= "header-add" src='./assets/benadryl.jpg'>
-<div class="articles">
+<div *ngIf="currentRoute !== '/admin'">
+  <img id= "header-add" src='./assets/benadryl.jpg'>
+</div>
+<div id="articles" class="clearfix">
   <div *ngFor="let article of articles | async" (click)="goToReadPage(article)" class="article-display">
     <img src="{{article.img}}">
     <h4><strong>{{article.title}}</strong></h4>
     <p>{{article.teaser}}</p>
     <h5>{{article.author}}</h5>
     <h6><strong>Views:</strong> {{article.views}}</h6>
+    <div *ngIf="currentRoute === '/admin'">
+      {{article.body}}
+      <hr>
+      <app-edit-article></app-edit-article>
+    </div>
   </div>
 </div>
-
-<footer class="footer">
-  <div class="container">
-    <a class="text-muted" routerLink="admin">Admin</a>
-  </div>
-</footer>
+<div *ngIf="currentRoute !== '/admin'">
+  <footer class="footer">
+    <div class="container">
+      <a class="text-muted" routerLink="admin">Admin</a>
+    </div>
+  </footer>
+</div>
