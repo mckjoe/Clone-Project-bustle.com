@@ -1,3 +1,24 @@
-<p>
-  edit-article works!
-</p>
+<h4>Edit Article</h4>
+
+<label>New Article Title:</label>
+<input [(ngModel)]="selectedArticle.title">
+<br>
+
+<label>New Article Teaser:</label>
+<input [(ngModel)]="selectedArticle.teaser">
+<br>
+
+<label>New Article Author:</label>
+<input [(ngModel)]="selectedArticle.author">
+<br>
+
+<label>New Article Content:</label>
+<input [(ngModel)]="selectedArticle.body">
+<br>
+
+<label>New Article Image URL:</label>
+<input [(ngModel)]="selectedArticle.img">
+
+<button (click)="beginUpdatingArticle(selectedArticle)">Update</button>
+<hr>
+<button (click)="beginDeletingArticle(selectedArticle)">Delete</button>

@@ -2,16 +2,18 @@
   <img id= "header-add" src='./assets/benadryl.jpg'>
 </div>
 <div id="articles" class="clearfix">
-  <div *ngFor="let article of articles | async" (click)="goToReadPage(article)" class="article-display">
-    <img src="{{article.img}}">
-    <h4><strong>{{article.title}}</strong></h4>
-    <p>{{article.teaser}}</p>
-    <h5>{{article.author}}</h5>
-    <h6><strong>Views:</strong> {{article.views}}</h6>
+  <div *ngFor="let article of articles | async" class="article-display">
+    <div (click)="goToReadPage(article)">
+      <img src="{{article.img}}">
+      <h4><strong>{{article.title}}</strong></h4>
+      <p>{{article.teaser}}</p>
+      <h5>{{article.author}}</h5>
+      <h6><strong>Views:</strong> {{article.views}}</h6>
+    </div>
     <div *ngIf="currentRoute === '/admin'">
       {{article.body}}
       <hr>
-      <app-edit-article></app-edit-article>
+      <app-edit-article [selectedArticle]="article"></app-edit-article>
     </div>
   </div>
 </div>
