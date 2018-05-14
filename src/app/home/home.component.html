@@ -8,7 +8,7 @@
       <h4><strong>{{article.title}}</strong></h4>
       <p>{{article.teaser}}</p>
       <h5>{{article.author}}</h5>
-      <h6><strong>Views:</strong> {{article.views}}</h6>
+      <h6> {{article.views}}</h6>
     </div>
     <div *ngIf="currentRoute === '/admin'">
       {{article.body}}
